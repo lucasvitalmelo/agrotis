@@ -8,7 +8,8 @@ export const MainContainer = styled.div({
 
 export const OverflowContainer = styled.div({
   height: 'calc(100vh - 65px)',
-  overflow: 'auto'
+  overflow: 'auto',
+  padding: '0 2rem'
 })
 
 export const ContentContainer = styled(Paper)({
