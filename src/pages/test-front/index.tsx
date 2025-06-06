@@ -32,22 +32,8 @@ import { TooltipStyled } from "../../components/tooltip"
 export function TestFrontTable() {
   const [isSearch, setIsSearch] = useState(false)
   const [searchTerm, setSearchTerm] = useState('')
-  const { registers, addRegister } = useRegisters()
+  const { registers } = useRegisters()
 
-  function handleAddMock() {
-    addRegister({
-      nome: 'John lucas',
-      dataFinal: new Date().toISOString(),
-      dataInicial: new Date().toISOString(),
-      laboratorio: { id: 1, nome: 'Lab Test' },
-      propriedades: [
-        { id: 1, nome: 'Castelinho Test' },
-        { id: 2, nome: 'Castelinho Test' }
-      ],
-      observacoes: 'test'
-
-    })
-  }
 
   const [page, setPage] = useState(0)
   const [rowsPerPage, setRowsPerPage] = useState(10)
@@ -72,7 +58,7 @@ export function TestFrontTable() {
   return (
     <>
       <Header>
-        <IconButton onClick={handleAddMock}>
+        <IconButton>
           <ArrowBackIos
             sx={{
               width: '16px',
