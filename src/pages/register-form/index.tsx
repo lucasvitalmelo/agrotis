@@ -1,4 +1,4 @@
-import { NavLink, useLocation } from 'react-router-dom'
+import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { useForm, Controller } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 
@@ -33,6 +33,8 @@ export function RegisterForm() {
   const { registers, addRegister, editRegister } = useRegisters()
   const { showSnackbar } = useSnackbar()
   const { state } = useLocation()
+  const navigate = useNavigate()
+
 
   const registerId = state?.registerId
   const initialData = registers.find((reg) => reg.id === registerId)
@@ -99,6 +101,7 @@ export function RegisterForm() {
     }
 
     reset()
+    navigate('/')
   }
 
   return (
